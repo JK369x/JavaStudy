@@ -14,20 +14,13 @@ public class Atm_acc {
       
    }
 
-   public void display() {
-      System.out.println("Account ID = " + this.Account_ID);
-      System.out.println("Account Name = " + this.Account_Name);
-      System.out.println("Password = " + this.Password);
-      System.out.println("Balance = " + this.Balance);
-   }
-   
    public void setAccount_ID(String Account_ID) {
       this.Account_ID = Account_ID;
    }
    public void setAccount_Name(String Account_Name) {
       this.Account_ID = Account_Name;
    }
-   public void setPassword(String Password) {
+   public void setPassword(String Password){
       this.Account_ID = Password;
    }
    public void setBalance(Double Balance) {

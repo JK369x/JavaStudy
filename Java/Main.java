@@ -1,6 +1,5 @@
 import java.util.Scanner;
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 
 
@@ -46,9 +45,9 @@ public class Main {
                 System.out.print("Enter Balance = ");
                 Double Balance = Sc.nextDouble();
 
-                if(Account_ID.length() >=13){
+                if(Account_ID.length() >13){
                     error.add("Account too long");
-                }if(Account_Name.length() >=50){
+                }if(Account_Name.length() >50){
                     error.add("Account Name too long");
                 }if(Password.length() >4){
                     error.add("Password too long");
@@ -72,11 +71,11 @@ public class Main {
     
 
     //*Show list acc */
-    private void showListAcc(){
-        for (Atm_acc atm_acc : atm_acc_list) {
-            atm_acc.display();
-        }
-    }
+    // private void showListAcc(){
+    //     for (Atm_acc atm_acc : atm_acc_list) {
+    //         atm_acc.display();
+    //     }
+    // }
 
     //*Login accounts */
     private void loginAccounts(){
@@ -87,12 +86,9 @@ public class Main {
         System.out.print("Account Password : ");
         String Password = Sc.nextLine();
         for (Atm_acc atm_acc : atm_acc_list) {
-            for(int x = 0; x < atm_acc_list.size(); x++)
+            // for(int x = 0; x < atm_acc_list.size(); x++)
                 if(atm_acc.getAccount_ID().equals(Account_ID) && atm_acc.getPassword().equals(Password)){
-                    // x =+ 1;
-                    System.out.println(x);
-                    System.out.println(atm_acc);
-                    System.out.println("Login success");
+                    // System.out.println("Login success");
                     do{
                         System.out.println("ATM ComputerThanyaburi Bank");
                         System.out.println("Account ID :" + atm_acc.getAccount_ID());
@@ -110,7 +106,7 @@ public class Main {
                                 System.out.print("Enter amount : ");
                                 Double amount = Sc.nextDouble();
                                 if(amount > atm_acc.getBalance()){
-                                    System.out.println("Not enough balance");
+                                    System.out.println("Not enough b alance");
                                 }else{
                                     atm_acc.setBalance(atm_acc.getBalance() - amount);
                                     System.out.println("Withdraw success");
@@ -124,11 +120,11 @@ public class Main {
                         }
                     }while(option !=4);
                 }else{
-                    System.out.println("Login failed");
-                    loginAccounts();
+                    // System.out.println("Login failed");
+                    // loginAccounts();
             }
         }
+        loginAccounts();
     }
 }
-
 
